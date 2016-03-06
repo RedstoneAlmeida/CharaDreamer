@@ -31,8 +31,6 @@ import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.util.CachedServerIcon;
 
-import com.mrpowergamerbr.charadreamer.CharaDreamer;
-
 /**
  * Represents the Bukkit core, for version and Server singleton handling
  */
@@ -184,7 +182,7 @@ public final class Bukkit {
      * @see Server#broadcastMessage(String message)
      */
     public static int broadcastMessage(String message) {
-        return CharaDreamer.nukkit.broadcastMessage(message);
+        return server.broadcastMessage(message);
     }
 
     /**
@@ -199,7 +197,7 @@ public final class Bukkit {
      */
     @Deprecated
     public static Player getPlayer(String name) {
-    	return new Player(CharaDreamer.nukkit.getPlayer(name));
+        return server.getPlayer(name);
     }
 
     /**
@@ -214,12 +212,7 @@ public final class Bukkit {
      * @see Server#getPlayer(java.util.UUID)
      */
     public static Player getPlayer(UUID id) {
-        for (cn.nukkit.Player p : CharaDreamer.nukkit.getOnlinePlayers().values()) {
-        	if (p.getUniqueId().equals(id)) {
-        		return new Player(p);
-        	}
-        }
-        return null;
+        return server.getPlayer(id);
     }
 
     /**
@@ -275,7 +268,7 @@ public final class Bukkit {
      * @see Server#getWorld(String name)
      */
     public static World getWorld(String name) {
-        return new World(CharaDreamer.nukkit.getLevelByName(name));
+        return server.getWorld(name);
     }
 
     /**
@@ -335,7 +328,7 @@ public final class Bukkit {
     public static boolean dispatchCommand(CommandSender sender, String commandLine) throws CommandException {
         return server.dispatchCommand(sender, commandLine);
     }
-    
+
     /**
      * @see Server#addRecipe(Recipe recipe)
      */
@@ -447,7 +440,7 @@ public final class Bukkit {
      */
     @Deprecated
     public static Player getPlayerExact(String name) {
-        return new Player(CharaDreamer.nukkit.getPlayerExact(name));
+        return server.getPlayerExact(name);
     }
 
     /**

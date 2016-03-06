@@ -2,6 +2,7 @@ package com.mrpowergamerbr.charadreamer;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import cn.nukkit.Server;
@@ -13,6 +14,11 @@ public class CharaDreamer extends PluginBase {
 	@Override
 	public void onEnable(){
 		nukkit = getServer();
+		
+		/*
+		 * Set Server in Bukkit
+		 */
+		Bukkit.setServer(new org.bukkit.Server());
 		
 		new ListenerWrapper(this);
 	}
