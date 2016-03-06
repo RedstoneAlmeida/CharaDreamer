@@ -1,0 +1,6 @@
+name: CharaDreamer
+main: com.mrpowergamerbr.charadreamer.CharaDreamer
+version: "1.0.0"
+author: MrPowerGamerBR
+api: ["1.0.0"]
+description: Bukkit API implementation for Nukkit
